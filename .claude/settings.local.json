@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --eslint --app --src-dir --import-alias \"@/*\" --no-tailwind --no-turbopack)",
+      "Bash(npx create-next-app@latest temp-next --typescript --eslint --app --src-dir --import-alias \"@/*\" --no-tailwind --no-turbopack)",
+      "Bash(npx next build)",
+      "Bash(cmd /c start http://localhost:3000)"
+    ]
+  }
+}
