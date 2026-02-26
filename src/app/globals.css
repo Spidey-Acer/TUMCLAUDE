@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #097B3E;
+  --color-primary-dark: #065a2f;
+  --color-accent: #D89837;
+  --color-dark: #0a0e27;
+  --color-light: #f8f9fa;
+  --color-text-dark: #1a1f3a;
+  --color-text-light: #6b7280;
+  --color-border: #e5e7eb;
+
+  --font-heading: var(--font-syne);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-space-mono);
+}
+
+/* ── Base ────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ── Nav link underline animation ────────────── */
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ── Card gradient top bar ───────────────────── */
+
+.card-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-bar:hover::before {
+  transform: scaleX(1);
+}
+
+/* ── Decorative blurred circles ──────────────── */
+
+.deco-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.deco-hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(216, 152, 55, 0.1);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.deco-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.deco-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.deco-cta::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(216, 152, 55, 0.1);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.deco-about-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.deco-about-image::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 400px;
+  height: 400px;
+  background: rgba(216, 152, 55, 0.15);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.deco-project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.deco-project-image::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: rgba(216, 152, 55, 0.2);
+  border-radius: 50%;
+  filter: blur(40px);
+}
